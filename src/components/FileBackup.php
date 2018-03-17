@@ -3,7 +3,7 @@
 namespace luya\backup\components;
 
 use luya\backup\components\schema\ISchema;
-use luya\backup\models\FileJob;
+use luya\backup\schedules\FileJob;
 use Deployer\Initializer\Exception\IOException;
 use JsonSchema\Exception\InvalidSchemaException;
 use luya\Exception;

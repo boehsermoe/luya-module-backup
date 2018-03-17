@@ -12,6 +12,9 @@
       "homepage" : "https://github.com/boehsermoe"
     }
   ],
+  "require": {
+    "boehsermoe/luya-module-scheduler": "*"
+  },
   "autoload" : {
     "psr-4" : {
       "luya\\backup\\" : "src/"

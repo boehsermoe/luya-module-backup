@@ -2,13 +2,13 @@
 
 namespace luya\backup\components;
 
-use luya\backup\models\Job;
+use luya\scheduler\models\BaseJob;
 use yii\helpers\Console;
 
 abstract class BaseBackup
 {
     /**
-     * @var \luya\scheduler\models\BaseJob
+     * @var BaseJob
      */
     protected $job;
 
@@ -17,7 +17,7 @@ abstract class BaseBackup
      */
     private $exportDir;
 
-    public function __construct(\luya\scheduler\models\BaseJob $job, string $exportDir)
+    public function __construct(BaseJob $job, string $exportDir)
     {
         $this->job = $job;
         $this->exportDir = $exportDir;

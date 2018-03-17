@@ -1,6 +1,6 @@
 <?php
 
-namespace luya\backup\models;
+namespace luya\backup\schedules;
 
 use luya\backup\components\FileBackup;
 use luya\backup\Module;
@@ -16,14 +16,6 @@ use luya\scheduler\models\BaseJob;
 class FileJob extends BaseJob
 {
 	public $path;
-
-	/**
-	 * @inheritdoc
-	 */
-	public static function ngRestApiEndpoint()
-	{
-		return 'api-backup-file-job';
-	}
 
 	public function rules()
 	{

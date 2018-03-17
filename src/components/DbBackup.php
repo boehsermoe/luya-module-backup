@@ -2,7 +2,7 @@
 
 namespace luya\backup\components;
 
-use luya\backup\models\DbJob;
+use luya\backup\schedules\DbJob;
 use yii\db\Exception;
 
 /**

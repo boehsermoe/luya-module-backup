@@ -4,8 +4,8 @@ namespace luya\backup;
 
 use luya\backup\components\DbBackup;
 use luya\backup\components\FileBackup;
-use luya\backup\models\DbJob;
-use luya\backup\models\FileJob;
+use luya\backup\schedules\DbJob;
+use luya\backup\schedules\FileJob;
 use luya\scheduler\models\BaseJob;
 use yii\base\InvalidConfigException;
 
@@ -16,23 +16,7 @@ use yii\base\InvalidConfigException;
  */
 class Module extends \luya\admin\base\Module
 {
-	public $apis = [
-		'api-backup-file-job' => 'luya\backup\apis\FileJobController',
-		'api-backup-db-job' => 'luya\backup\apis\DbJobController',
-		'api-backup-execute-job' => 'luya\backup\apis\ExecuteJobController',
-	];
-
 	public $exportDir = '@runtime/backups';
-
-	public function getMenu()
-	{
-		return (new \luya\admin\components\AdminMenuBuilder($this))
-			->node('Backups', 'save')
-			->group('Jobs')
-			->itemApi('Filesystem', 'backup/file-job/index', 'label', 'api-backup-file-job')
-			->itemApi('Database', 'backup/db-job/index', 'label', 'api-backup-db-job')
-			;
-	}
 
 	/**
 	 * @param BaseJob[] $jobs

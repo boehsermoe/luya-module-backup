@@ -1,6 +1,6 @@
 <?php
 
-namespace luya\backup\models;
+namespace luya\backup\schedules;
 
 use luya\backup\components\DbBackup;
 use luya\backup\Module;
@@ -15,14 +15,6 @@ class DbJob extends BaseJob
     public $mysqlUserName;
 
     public $mysqlPassword;
-
-	/**
-	 * @inheritdoc
-	 */
-	public static function ngRestApiEndpoint()
-	{
-		return 'api-backup-db-job';
-	}
 
 	public function extraFields()
 	{

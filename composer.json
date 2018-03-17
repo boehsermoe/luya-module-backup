@@ -1,0 +1,33 @@
+{
+  "name" : "boehsermoe/luya-module-backup",
+  "description" : "The LUYA Backup module.",
+  "type" : "luya-module",
+  "keywords" : ["php", "luya", "module", "backup", "yii2", "yii"],
+  "license": "MIT",
+  "homepage" : "http://luya.io",
+  "authors" : [
+    {
+      "name" : "Bennet Klarhölter",
+      "email" : "boehsermoe@me.com",
+      "homepage" : "https://github.com/boehsermoe"
+    }
+  ],
+  "autoload" : {
+    "psr-4" : {
+      "luya\\backup\\" : "src/"
+    }
+  },
+  "extra": {
+    "luya" : {
+    }
+  },
+  "config": {
+    "platform": {"php": "7.0"}
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}

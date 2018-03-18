@@ -6,7 +6,7 @@ use luya\backup\components\DbBackup;
 use luya\backup\Module;
 use luya\scheduler\models\BaseJob;
 
-class DbJob extends BaseJob
+class DatanbaseBackupJob extends BaseJob
 {
 	public $mysqlHost;
 

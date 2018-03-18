@@ -3,6 +3,7 @@
 namespace luya\backup\components;
 
 use luya\scheduler\models\BaseJob;
+use yii\base\InvalidArgumentException;
 use yii\helpers\Console;
 
 abstract class BaseBackup
@@ -19,8 +20,12 @@ abstract class BaseBackup
 
     public function __construct(BaseJob $job, string $exportDir)
     {
-        $this->job = $job;
-        $this->exportDir = $exportDir;
+	    if (is_null($exportDir)) {
+		    throw new InvalidArgumentException('Backup required a $exportDir.');
+	    }
+
+	    $this->job = $job;
+	    $this->exportDir = $exportDir;
     }
 
     abstract public function createBackup();

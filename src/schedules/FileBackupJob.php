@@ -13,7 +13,7 @@ use luya\scheduler\models\BaseJob;
  * @property string $path
  *
  */
-class FileJob extends BaseJob
+class FileBackupJob extends BaseJob
 {
 	public $path;
 

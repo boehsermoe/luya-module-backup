@@ -1,5 +1,8 @@
 # Backup Module
 
+Based on [LUYA schedule module](https://github.com/boehsermoe/luya-module-scheduler)
+
+
 ## Installation
 
 `composer require boehsermoe/luya-module-backup`
@@ -12,6 +15,9 @@ return [
         // ...
         'backup' => [
             'class' => 'luya\backup\Module',
+            
+            // Path where files will exported. default @runtime/backups
+            //'exportDir' => '/your/export/path' 
         ],
         // ...
     ],
@@ -20,6 +26,9 @@ return [
 
 ## Create a new job
 
+Scheduler -> DatabaseBackupJobs -> Add
+
+![screen](screen.png)
 
 
 ## Execute job

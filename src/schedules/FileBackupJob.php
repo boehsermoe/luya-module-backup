@@ -15,35 +15,35 @@ use luya\scheduler\models\BaseJob;
  */
 class FileBackupJob extends BaseJob
 {
-	public $path;
+    public $path;
 
-	public function rules()
-	{
-		return array_merge(parent::rules(), [
-			[['path'], 'required']
-		]);
-	}
+    public function rules()
+    {
+        return array_merge(parent::rules(), [
+            [['path'], 'required']
+        ]);
+    }
 
 
-	public function extraFields()
-	{
-		return [
-			'path'
-		];
-	}
+    public function extraFields()
+    {
+        return [
+            'path'
+        ];
+    }
 
-	public function ngrestExtraAttributeTypes()
-	{
-		return [
-			'path' => 'text',
-		];
-	}
+    public function ngrestExtraAttributeTypes()
+    {
+        return [
+            'path' => 'text',
+        ];
+    }
 
-	public function run()
-	{
-		$exportDir = Module::getInstance()->exportDir;
+    public function run()
+    {
+        $exportDir = Module::getInstance()->exportDir;
 
-		$handler = new FileBackup($this, $exportDir);
-		$handler->createBackup();
-	}
+        $handler = new FileBackup($this, $exportDir);
+        $handler->createBackup();
+    }
 }

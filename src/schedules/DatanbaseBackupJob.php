@@ -8,7 +8,7 @@ use luya\scheduler\models\BaseJob;
 
 class DatanbaseBackupJob extends BaseJob
 {
-	public $mysqlHost;
+    public $mysqlHost;
 
     public $mysqlDatabaseName;
 
@@ -16,31 +16,31 @@ class DatanbaseBackupJob extends BaseJob
 
     public $mysqlPassword;
 
-	public function extraFields()
-	{
-		return [
-			'mysqlHost',
-			'mysqlDatabaseName',
-			'mysqlUserName',
-			'mysqlPassword',
-		];
-	}
+    public function extraFields()
+    {
+        return [
+            'mysqlHost',
+            'mysqlDatabaseName',
+            'mysqlUserName',
+            'mysqlPassword',
+        ];
+    }
 
-	public function ngrestExtraAttributeTypes()
-	{
-		return [
-			'mysqlHost' => 'text',
-			'mysqlDatabaseName' => 'text',
-			'mysqlUserName' => 'text',
-			'mysqlPassword' => 'text',
-		];
-	}
+    public function ngrestExtraAttributeTypes()
+    {
+        return [
+            'mysqlHost' => 'text',
+            'mysqlDatabaseName' => 'text',
+            'mysqlUserName' => 'text',
+            'mysqlPassword' => 'text',
+        ];
+    }
 
-	public function run()
-	{
-		$exportDir = Module::getInstance()->exportDir;
+    public function run()
+    {
+        $exportDir = Module::getInstance()->exportDir;
 
-		$handler = new DbBackup($this, $exportDir);
-		$handler->createBackup();
-	}
+        $handler = new DbBackup($this, $exportDir);
+        $handler->createBackup();
+    }
 }

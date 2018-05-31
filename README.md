@@ -34,5 +34,12 @@ Scheduler -> DatabaseBackupJobs -> Add
 ## Execute job
 
 ```
-./luya scheduler/run/now {job id/name}
+./luya scheduler/run/now {id/name of the job}
+```
+
+## Start jobs by cron
+
+Start all expired jobs every minute via cron:
+```shell
+* * * * * ./luya scheduler/run
 ```
